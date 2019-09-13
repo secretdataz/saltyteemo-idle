@@ -1,0 +1,13 @@
+{
+  "name": "saltyteemo-idler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "tmi.js": "^1.5.0"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
