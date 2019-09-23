@@ -55,14 +55,14 @@ async function farm() {
     console.log(`* Will call !farm in ${delay / 1000} seconds.`);
   }
   
-  timeout = setTimeout(() => {
+  timeout = setTimeout(async () => {
     const ts = +new Date();
     try {
-      client.say(process.env.TWITCH_CHANNEL, '!farm');
+      await client.say(process.env.TWITCH_CHANNEL, '!farm');
     } catch(e) {
       
     }
-    
+
     lastFarmCall = ts;
     saveTimestamp(ts);
 
