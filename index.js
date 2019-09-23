@@ -57,7 +57,12 @@ async function farm() {
   
   timeout = setTimeout(() => {
     const ts = +new Date();
-    client.say(process.env.TWITCH_CHANNEL, '!farm');
+    try {
+      client.say(process.env.TWITCH_CHANNEL, '!farm');
+    } catch(e) {
+      
+    }
+    
     lastFarmCall = ts;
     saveTimestamp(ts);
 
