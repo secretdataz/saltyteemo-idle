@@ -1,11 +1,10 @@
 const tmi = require('tmi.js');
 const fs = require('fs').promises;
 const path = require('path');
+const argv = require('minimist')(process.argv.slice(2));
+const _ = require('lodash');
 
-let dotenvPath = '.env';
-if (process.argv.length > 2) {
-  dotenvPath = process.argv[2];
-}
+let dotenvPath = _.get(argv, 'env', '.env');
 
 require('dotenv').config({ path: path.resolve(process.cwd(), dotenvPath) });
 
