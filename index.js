@@ -1,6 +1,13 @@
 const tmi = require('tmi.js');
 const fs = require('fs').promises;
-require('dotenv').config();
+const path = require('path');
+
+let dotenvPath = '.env';
+if (process.argv.length > 2) {
+  dotenvPath = process.argv[2];
+}
+
+require('dotenv').config({ path: path.resolve(process.cwd(), dotenvPath) });
 
 const opts = {
   identity: {
