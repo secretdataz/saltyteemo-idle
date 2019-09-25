@@ -17,7 +17,8 @@ const opts = {
     process.env.TWITCH_CHANNEL
   ]
 };
-const LAST_TIMESTAMP_PATH = '.lastFarmTimestamp.json';
+
+const LAST_TIMESTAMP_PATH = process.env.LAST_TIMESTAMP_PATH;
 const MAX_DELAY = 2 * 60 * 60 * 1000; // 2 hours
 // const MAX_DELAY = 10000; // 10 sec for testing
 
